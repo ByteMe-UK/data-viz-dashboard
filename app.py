@@ -72,10 +72,6 @@ continents = get_continent_list(df)
 
 # ── Sidebar filters ─────────────────────────────────────────────
 with st.sidebar:
-    st.image(
-        "https://img.icons8.com/fluency/96/coronavirus.png",
-        width=60,
-    )
     st.title("🌍 COVID-19 Dashboard")
     st.caption("Data from [Our World in Data](https://ourworldindata.org/covid-deaths)")
 
