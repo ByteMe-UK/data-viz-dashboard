@@ -9,11 +9,11 @@ An interactive data dashboard that visualises the **global COVID-19 pandemic** w
 
 ## 🚀 Live Demo
 
-> 🔗 **[Open Dashboard on Streamlit Cloud](https://byteme-uk-data-viz-dashboard.streamlit.app)** _(deploy link will be active after setup)_
+> 🔗 **[Open Dashboard →](https://byteme-uk-data-viz-dashboard.streamlit.app)**
 
 ## 📸 Screenshots
 
-> _Screenshots will be added after deployment_
+> _Take a screenshot of the live dashboard and add it here as `screenshots/dashboard.png`_
 
 ## ✨ Features
 
