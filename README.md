@@ -11,6 +11,10 @@ An interactive data dashboard visualising the **global COVID-19 pandemic** with 
 
 > 🔗 **[Open Dashboard on Streamlit Cloud →](https://byteme-uk-data-viz-dashboard.streamlit.app)**
 
+## 📸 Screenshot
+
+![Dashboard](screenshots/dashboard.png)
+
 ## ✨ Features
 
 - 🗺️ **World Choropleth Map** — colour-coded by any metric
