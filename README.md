@@ -1,19 +1,15 @@
 # 🌍 Global COVID-19 Interactive Dashboard
 
-An interactive data dashboard that visualises the **global COVID-19 pandemic** with 6 chart types, real-time data from Our World in Data, and continent/country-level filtering — built with **Python**, **Streamlit**, and **Plotly**.
+An interactive data dashboard visualising the **global COVID-19 pandemic** with 6 chart types, live data from Our World in Data, and continent/country-level filtering — built with **Python**, **Streamlit**, and **Plotly**.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.45+-FF4B4B?logo=streamlit&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-6.0+-3F4F75?logo=plotly&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B?logo=streamlit&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-5.18+-3F4F75?logo=plotly&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 🚀 Live Demo
 
-> 🔗 **[Open Dashboard →](https://byteme-uk-data-viz-dashboard.streamlit.app)**
-
-## 📸 Screenshots
-
-> _Take a screenshot of the live dashboard and add it here as `screenshots/dashboard.png`_
+> 🔗 **[Open Dashboard on Streamlit Cloud →](https://byteme-uk-data-viz-dashboard.streamlit.app)**
 
 ## ✨ Features
 
@@ -31,10 +27,18 @@ An interactive data dashboard that visualises the **global COVID-19 pandemic** w
 | Technology | Purpose |
 |-----------|---------|
 | Python 3.10+ | Core language |
-| Streamlit | Web framework & deployment |
-| Plotly | Interactive visualisations |
+| Streamlit | Web framework & UI |
+| Plotly | Interactive charts (hover, zoom, pan) |
 | Pandas | Data wrangling |
-| OWID Dataset | COVID-19 data source |
+| Requests | HTTP client for data fetching |
+
+## 📊 Data Source
+
+Live data from **[Our World in Data (OWID)](https://ourworldindata.org/covid-deaths)** — a public COVID-19 dataset updated regularly.
+
+- ~430K rows, 67 columns (only 14 loaded to save memory)
+- Fetched live on startup, cached for 1 hour via `@st.cache_data`
+- License: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## 📦 Getting Started
 
@@ -45,7 +49,7 @@ cd data-viz-dashboard
 
 # Create virtual environment
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate   # Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -54,36 +58,33 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Then visit `http://localhost:8501` in your browser.
+Open `http://localhost:8501` in your browser.
 
 ## 📁 Project Structure
 
 ```
 data-viz-dashboard/
-├── app.py                     ← Main Streamlit dashboard
-├── requirements.txt           ← Python dependencies
+├── app.py                     ← Entry point — page config, CSS, layout, sidebar
+├── requirements.txt
 ├── .streamlit/
-│   └── config.toml            ← Streamlit theme & config
+│   └── config.toml            ← Dark theme colours (primaryColor: #6C63FF)
 ├── data/
-│   ├── __init__.py
-│   └── loader.py              ← Data fetching & caching (OWID)
+│   └── loader.py              ← OWID data fetch, cache, filter, helpers
 ├── components/
-│   ├── __init__.py
 │   ├── charts.py              ← 6 Plotly chart functions
-│   └── metrics.py             ← KPI metric cards
+│   └── metrics.py             ← KPI cards (cases, deaths, vaccinations, countries)
 ├── LICENSE
 └── README.md
 ```
 
-## 🚢 Deployment
+## 🚢 Deploy Your Own
 
-This app is deployed for **free** on [Streamlit Community Cloud](https://streamlit.io/cloud):
+Free deployment on [Streamlit Community Cloud](https://streamlit.io/cloud):
 
-1. Push this repo to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Connect your GitHub account
-4. Select `ByteMe-UK/data-viz-dashboard` → `main` → `app.py`
-5. Click **Deploy** — done!
+1. Fork this repo to your GitHub account
+2. Go to [share.streamlit.io](https://share.streamlit.io) and sign in
+3. Click **New app** → select your fork → branch `main` → `app.py`
+4. Click **Deploy** — live in ~60 seconds
 
 ## 📄 License
 
